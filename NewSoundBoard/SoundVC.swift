@@ -22,6 +22,8 @@ class SoundVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        setupRecorder()
         
         // Do any additional setup after loading the view.
     }
@@ -42,7 +44,7 @@ class SoundVC: UIViewController {
             let basePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
             let audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
-            
+            print("####### \(audioURL) #######")
             
             // create setting for audio recorder
             
@@ -69,7 +71,28 @@ class SoundVC: UIViewController {
     
     @IBAction func recordTapped(_ sender: Any) {
         
-        
+        if audioRecorder != nil , audioRecorder!.isRecording {
+
+            // Stop Recording
+            audioRecorder!.stop()
+
+            // Change button title to Record
+            RecordBtn.setTitle("Record", for: .normal)
+            
+        } else if audioRecorder != nil {
+            
+            // Start Recording
+            audioRecorder!.record()
+            
+            // CHange button to Stop
+            
+            RecordBtn.setTitle("Stop", for: .normal)
+            
+        } else {
+            
+            print("####### audioRecorder object is nil #######")
+            
+        }
         
     }
     
