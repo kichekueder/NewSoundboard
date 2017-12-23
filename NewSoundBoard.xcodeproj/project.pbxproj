@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E23333611FECF72B009E38C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23333601FECF72B009E38C3 /* AppDelegate.swift */; };
-		E23333631FECF72B009E38C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23333621FECF72B009E38C3 /* ViewController.swift */; };
+		E23333631FECF72B009E38C3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23333621FECF72B009E38C3 /* MainVC.swift */; };
 		E23333661FECF72B009E38C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23333641FECF72B009E38C3 /* Main.storyboard */; };
 		E23333691FECF72B009E38C3 /* NewSoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E23333671FECF72B009E38C3 /* NewSoundBoard.xcdatamodeld */; };
 		E233336B1FECF72B009E38C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E233336A1FECF72B009E38C3 /* Assets.xcassets */; };
 		E233336E1FECF72B009E38C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233336C1FECF72B009E38C3 /* LaunchScreen.storyboard */; };
 		E23333791FECF72B009E38C3 /* NewSoundBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23333781FECF72B009E38C3 /* NewSoundBoardTests.swift */; };
 		E23333841FECF72B009E38C3 /* NewSoundBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23333831FECF72B009E38C3 /* NewSoundBoardUITests.swift */; };
+		E2B922F61FECFE080092F652 /* SoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B922F51FECFE080092F652 /* SoundVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		E233335D1FECF72B009E38C3 /* NewSoundBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSoundBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23333601FECF72B009E38C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E23333621FECF72B009E38C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E23333621FECF72B009E38C3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		E23333651FECF72B009E38C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E23333681FECF72B009E38C3 /* NewSoundBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewSoundBoard.xcdatamodel; sourceTree = "<group>"; };
 		E233336A1FECF72B009E38C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		E233337F1FECF72B009E38C3 /* NewSoundBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewSoundBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23333831FECF72B009E38C3 /* NewSoundBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSoundBoardUITests.swift; sourceTree = "<group>"; };
 		E23333851FECF72B009E38C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B922F51FECFE080092F652 /* SoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				E23333601FECF72B009E38C3 /* AppDelegate.swift */,
-				E23333621FECF72B009E38C3 /* ViewController.swift */,
+				E23333621FECF72B009E38C3 /* MainVC.swift */,
+				E2B922F51FECFE080092F652 /* SoundVC.swift */,
 				E23333641FECF72B009E38C3 /* Main.storyboard */,
 				E233336A1FECF72B009E38C3 /* Assets.xcassets */,
 				E233336C1FECF72B009E38C3 /* LaunchScreen.storyboard */,
@@ -262,8 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23333631FECF72B009E38C3 /* ViewController.swift in Sources */,
+				E23333631FECF72B009E38C3 /* MainVC.swift in Sources */,
 				E23333691FECF72B009E38C3 /* NewSoundBoard.xcdatamodeld in Sources */,
+				E2B922F61FECFE080092F652 /* SoundVC.swift in Sources */,
 				E23333611FECF72B009E38C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,29 +7,95 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SoundVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var RecordBtn: UIButton!
+    @IBOutlet weak var PlayBtn: UIButton!
+    @IBOutlet weak var AddBtn: UIButton!
+    @IBOutlet weak var SoundNameTF: UITextField!
+    
+    var audioRecorder: AVAudioRecorder?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupRecorder() {
+        
+        // create URL for audio file
+        
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try session.overrideOutputAudioPort(.speaker)
+            try session.setActive(true)
+            
+            
+            // create settings for audio file
+            
+            let basePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            let pathComponents = [basePath, "audio.m4a"]
+            let audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
+            
+            
+            // create setting for audio recorder
+            
+            var settings: [String:Any] = [:]
+            settings[AVFormatIDKey] = kAudioFileMPEG4Type
+            settings[AVSampleRateKey] = 44100.0
+            settings[AVNumberOfChannelsKey] = 2
+            
+            // create AudioRecorder object
+            
+            audioRecorder = try AVAudioRecorder(url: audioURL, settings: settings)
+            audioRecorder?.prepareToRecord()
+            
+        } catch let error as NSError {
+            
+            print(error.description)
+            print(error.localizedDescription)
+            print(error.debugDescription)
+            
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func recordTapped(_ sender: Any) {
+        
+        
+        
     }
-    */
-
+    
+    @IBAction func playTapped(_ sender: Any) {
+        
+        
+        
+    }
+    
+    @IBAction func addTapped(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
