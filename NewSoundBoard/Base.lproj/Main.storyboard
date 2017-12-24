@@ -18,13 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-yK-ize" customClass="MainVC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xOf-5J-v6I">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xOf-5J-v6I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4zB-55-xYA"/>
+                            <constraint firstItem="xOf-5J-v6I" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AvD-dF-VBp"/>
+                            <constraint firstItem="xOf-5J-v6I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AzC-Rx-qu0"/>
+                            <constraint firstItem="xOf-5J-v6I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="uEQ-Uw-Qy9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qGK-j6-2aZ">
@@ -34,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xOf-5J-v6I" id="fib-Cs-bvf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,27 +58,27 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rv8-X0-aHR">
                                 <rect key="frame" x="40" y="104" width="295" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H50-4M-5WR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H50-4M-5WR" userLabel="recordBtn">
                                         <rect key="frame" x="123" y="0.0" width="49" height="30"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
                                             <action selector="recordTapped:" destination="AvV-iK-Sfp" eventType="touchUpInside" id="iL1-2S-cad"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-e8-HdE">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-e8-HdE" userLabel="playBtn">
                                         <rect key="frame" x="132.5" y="30" width="30" height="30"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
                                             <action selector="playTapped:" destination="AvV-iK-Sfp" eventType="touchUpInside" id="Mst-H3-80q"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71d-3U-H8p">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71d-3U-H8p" userLabel="soundNameTF">
                                         <rect key="frame" x="0.0" y="60" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U97-aD-WF0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U97-aD-WF0" userLabel="addBtn">
                                         <rect key="frame" x="132.5" y="90" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
@@ -93,10 +101,10 @@
                         <viewLayoutGuide key="safeArea" id="h3D-Gp-PMb"/>
                     </view>
                     <connections>
-                        <outlet property="AddBtn" destination="U97-aD-WF0" id="i0Y-sd-ZUx"/>
-                        <outlet property="PlayBtn" destination="b1n-e8-HdE" id="zbA-eZ-sF9"/>
-                        <outlet property="RecordBtn" destination="H50-4M-5WR" id="TKn-OH-VAg"/>
-                        <outlet property="SoundNameTF" destination="71d-3U-H8p" id="je0-nJ-lHi"/>
+                        <outlet property="addBtn" destination="U97-aD-WF0" id="M7g-dE-eGe"/>
+                        <outlet property="playBtn" destination="b1n-e8-HdE" id="NXc-6e-y3z"/>
+                        <outlet property="recordBtn" destination="H50-4M-5WR" id="E8b-R9-WcE"/>
+                        <outlet property="soundNameTF" destination="71d-3U-H8p" id="DQi-x0-TsF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrS-Lw-ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
